@@ -292,7 +292,7 @@ proof: 972929647be634d708e071bb0834d28e45[...]==
 To benchmark a single WindowPoSt you will need to specify the path of the sealed sector, the cache file, and the `commR` output you got in the PreCommit2 step. Specifying the correct sector number is only needed if you are using an existing sectorbuilder and want to benchmark a real sector. Else you can specify any integer as the sector number, it won´t affect the performance.
 
 ```shell
-./lotus-bench simple window-post --sector-size <size> /your/path/sealed /your/path/sealed <commR> [sector num]
+./lotus-bench simple window-post --sector-size <size> /your/path/sealed /your/path/cache <commR> [sector num]
 ```
 
 Together with the performance, the command will output the proof for the WindowPoSt.
@@ -308,7 +308,7 @@ tfhJc8rPBfUEe/b1GFOPCD9pd[...]=
 To benchmark a single WinningPoSt you will need to specify the path of the sealed sector, the cache file, and the `commR` output you got in the PreCommit2 step. Specifying the correct sector number is only needed if you are using an existing sectorbuilder and want to benchmark a real sector. Else you can specify any integer as the sector number, it won´t affect the performance.
 
 ```shell
-./lotus-bench simple winning-post --sector-size <size> /your/path/sealed /your/path/sealed <commR> [sector num]
+./lotus-bench simple winning-post --sector-size <size> /your/path/sealed /your/path/cache <commR> [sector num]
 ```
 
 Together with the performance, the command will output the proof for the WinningPoSt.
@@ -343,7 +343,7 @@ baga6ea4seaqmbj3lw5365pwbqfh6pmf2rkc65t2ovobqt6zbtjn2frx4uvkyumy 34359738368
 To run a single ReplicaUpdate benchmark and create an updated sealed file, you will need to specify the path of the sealed sector, the cache, and the new-unsealed sector. You will also need to specify the path for the updated sector, the updated cache file, and the piece CID and piece size from the `add-piece` step.
 
 ```shell
-./lotus-bench simple addpiece --sector-size <size> /your/path/sealed /your/path/cache /your/path/sealed /your/path/new-unsealed /your/path/updated /your/path/updated-cache <piece cid> <piece size>
+./lotus-bench simple addpiece --sector-size <size> /your/path/sealed /your/path/cache /your/path/new-unsealed /your/path/updated /your/path/updated-cache <piece cid> <piece size>
 ```
 
 Together with the performance, the command will output the `commD` and `commR` of the updated sector that you will need if you want to perform the ProveReplicaUpdate 1 & 2 benchmarks.
